@@ -1,16 +1,17 @@
-node_modules
 logs
 pids
 lib-cov
 coverage
 build/Release
+node_modules
+test
 
 *.log
 *.pid
 *.seed
 
-npm-debug.log*
+.editorconfig
+.jshintrc
 .grunt
 .lock-wscript
-.npm
-.node_repl_history
+.travis.yml
