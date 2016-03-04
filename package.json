@@ -1,0 +1,29 @@
+{
+  "name": "prhone-mdb",
+  "version": "0.1.0",
+  "description": "Mini database",
+  "keywords": [
+    "prhone",
+    "database",
+    "module"
+  ],
+  "license": "MIT",
+  "private": false,
+  "author": {
+    "name": "Romel Pérez",
+    "email": "ronelprhone@gmail.com",
+    "url": "http://romelperez.com"
+  },
+  "homepage": "https://github.com/romelperez/prhone-mdb#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/romelperez/prhone-mdb.git"
+  },
+  "bugs": {
+    "url": "https://github.com/romelperez/prhone-mdb/issues"
+  },
+  "main": "lib/index.js",
+  "dependencies": {
+    "underscore": "^1.8.3"
+  }
+}
