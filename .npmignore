@@ -1,15 +1,17 @@
+node_modules
 logs
 pids
 lib-cov
 coverage
 build/Release
-node_modules
 test
 
 *.log
 *.pid
 *.seed
 
+.gitignore
+.npmignore
 .editorconfig
 .jshintrc
 .grunt
