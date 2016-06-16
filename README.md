@@ -69,7 +69,54 @@ db.getById('fruits', 0).then(fruit => {
 
 ## API
 
---
+### `db MDB(String filePath)`
+
+- `String filePath` the absolute path to a JSON file where to store the data.
+
+### `Promise db.create(String tableName, Object item)`
+
+- `String tableName` The table name. Even if it does not exist.
+- `Object item` The new item to create in the table.
+
+#### `.then(function (Object item) {})`
+
+- `Object item` The new item created.
+
+### `Promise db.getById(String tableName, Number itemId)`
+
+- `String tableName` The table name.
+- `Number itemId` The item id.
+
+#### `.then(function (Object item) {})`
+
+- `Object item` The item fetched.
+
+### `Promise db.getAll(String tableName)`
+
+- `String tableName` The table name.
+
+#### `.then(function (Array items) {})`
+
+- `Array items` The collection of all items. If table did not exist, it is an empty array.
+
+### `Promise db.updateById(String tableName, Number itemId, Object data)`
+
+- `String tableName` The table name.
+- `Number itemId` The item id.
+- `Object data` The new data of the item. This will be merged.
+
+#### `.then(function (Object item) {})`
+
+- `Object item` The item updated.
+
+### `Promise db.removeById(String tableName, Number itemId, Object data)`
+
+- `String tableName` The table name.
+- `Number itemId` The item id.
+
+#### `.then(function () {})`
+
+The promise will not give parameters.
 
 ## License
 
