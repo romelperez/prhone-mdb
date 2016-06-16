@@ -1,11 +1,12 @@
 {
   "name": "prhone-mdb",
-  "version": "0.1.0",
-  "description": "Mini database",
+  "version": "1.0.0",
+  "description": "Mini DataBase",
   "keywords": [
     "prhone",
     "database",
-    "module"
+    "module",
+    "fs"
   ],
   "license": "MIT",
   "private": false,
@@ -25,5 +26,9 @@
   "main": "lib/index.js",
   "dependencies": {
     "underscore": "^1.8.3"
+  },
+  "devDependencies": {
+    "chai": "^3.5.0",
+    "require-dir": "^0.3.0"
   }
 }
