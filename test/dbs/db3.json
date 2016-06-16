@@ -1,0 +1,28 @@
+{
+  "fruits": [{
+    "id": 0,
+    "name": "apple"
+  }, {
+    "id": 1,
+    "name": "lemon"
+  }, {
+    "id": 2,
+    "name": "orange"
+  }, {
+    "id": 3,
+    "name": "strawberry"
+  }, {
+    "id": 4,
+    "name": "coconut"
+  }],
+  "cars": [{
+    "id": 0,
+    "name": "lamborghini"
+  }, {
+    "id": 1,
+    "name": "audi"
+  }, {
+    "id": 2,
+    "name": "bmw"
+  }]
+}
