@@ -1,12 +1,14 @@
 {
   "name": "prhone-mdb",
-  "version": "1.0.0",
-  "description": "Mini DataBase",
+  "version": "1.0.1",
+  "description": "Mini DataBase (DB)",
   "keywords": [
     "prhone",
     "database",
     "module",
-    "fs"
+    "fs",
+    "mini",
+    "db"
   ],
   "license": "MIT",
   "private": false,
