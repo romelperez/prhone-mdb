@@ -2,6 +2,7 @@
 
 [![npm version](https://badge.fury.io/js/prhone-mdb.svg)](https://badge.fury.io/js/prhone-mdb)
 [![Build Status](https://travis-ci.org/romelperez/prhone-mdb.svg?branch=master)](https://travis-ci.org/romelperez/prhone-mdb)
+[![prhone](https://img.shields.io/badge/prhone-project-1b38a9.svg)](http://romelperez.com)
 
 > PRHONE Mini-DataBase.
 
