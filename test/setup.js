@@ -1,6 +1,6 @@
 const _ = require('lodash');
-const { assert, expect } = require('chai');
+const chai = require('chai');
 
 global._ = _;
-global.assert = assert;
-global.expect = expect;
+global.assert = chai.assert;
+global.expect = chai.expect;
