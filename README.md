@@ -11,10 +11,10 @@ Mini-database manager using Node file system API in a relational way for simple 
 - Promises are used to handle operations.
 - Uses a JSON file to store the data.
 - All data is stored in tables.
-- The identifier of each item in each table is a number and its name is `id`.
+- The identifier of each item in each table is an UUID v4 and its name is `id`.
+- UTF8 is used for encoding.
 - When creating a new item:
   - If table does not exists, it's created automatically.
-  - The item created in an empty table starts with `id` value `0`.
 - When getting:
   - Returns an empty array if table is not found.
   - But error if fetching an unique item and it's not found.
@@ -43,28 +43,35 @@ const db = new MDB(`${__dirname}/database.json`);
 
 // Creates a new collection called `fruits` and create a new item within.
 db.create('fruits', { name: 'apple', color: 'red' }).then(fruit => {
-  console.log('New fruit:', fruit);  // { id: 0, name: 'apple', color: 'red' }
+  console.log('New fruit:', fruit);
+  // { id: 'c846482b-7dbe-4ee3-866c-e3cc06463cd2', name: 'apple', color: 'red' }
 }, err => {
   console.log('Error:', err);  // If an error occurs.
 });
 
 // Create a new item in fruits collection.
 db.create('fruits', { name: 'lemon', color: 'yellow' }).then(fruit => {
-  console.log('New fruit:', fruit);  // { id: 1, name: 'lemon', color: 'yellow' }
+  console.log('New fruit:', fruit);
+  // { id: '667ba0fd-dfc0-48aa-b8ab-17cd1fc5d48f', name: 'lemon', color: 'yellow' }
 }, err => {
   console.log('Error:', err);
 });
 
-db.getById('fruits', 0).then(fruit => {
-  console.log('Fruit:', fruit);  // { id: 0, name: 'apple', color: 'red' }
+db.getById('fruits', 'c846482b-7dbe-4ee3-866c-e3cc06463cd2').then(fruit => {
+  console.log('Fruit:', fruit);
+  // { id: 'c846482b-7dbe-4ee3-866c-e3cc06463cd2', name: 'apple', color: 'red' }
 });
 
-db.updateById('fruits', 0, { color: 'green' }).then(fruit => {
-  console.log('Modified fruit:', fruit);  // { id: 0, name: 'apple', color: 'green' }
-});
+db.
+  updateById('fruits', 'c846482b-7dbe-4ee3-866c-e3cc06463cd2', { color: 'green' }).
+  then(fruit => {
+    console.log('Modified fruit:', fruit);
+    // { id: 'c846482b-7dbe-4ee3-866c-e3cc06463cd2', name: 'apple', color: 'green' }
+  });
 
-db.getById('fruits', 0).then(fruit => {
-  console.log('Fruit:', fruit);  // { id: 0, name: 'apple', color: 'green' }
+db.getById('fruits', 'c846482b-7dbe-4ee3-866c-e3cc06463cd2').then(fruit => {
+  console.log('Fruit:', fruit);
+  // { id: 'c846482b-7dbe-4ee3-866c-e3cc06463cd2', name: 'apple', color: 'green' }
 });
 ```
 
@@ -83,10 +90,10 @@ db.getById('fruits', 0).then(fruit => {
 
 - `Object item` The new item created.
 
-### `Promise db.getById(String tableName, Number itemId)`
+### `Promise db.getById(String tableName, String itemId)`
 
 - `String tableName` The table name.
-- `Number itemId` The item id.
+- `String itemId` The item id.
 
 #### `.then(function (Object item) {})`
 
@@ -100,20 +107,20 @@ db.getById('fruits', 0).then(fruit => {
 
 - `Array items` The collection of all items. If table did not exist, it is an empty array.
 
-### `Promise db.updateById(String tableName, Number itemId, Object data)`
+### `Promise db.updateById(String tableName, String itemId, Object data)`
 
 - `String tableName` The table name.
-- `Number itemId` The item id.
+- `String itemId` The item id.
 - `Object data` The new data of the item. This will be merged.
 
 #### `.then(function (Object item) {})`
 
 - `Object item` The item updated.
 
-### `Promise db.removeById(String tableName, Number itemId, Object data)`
+### `Promise db.removeById(String tableName, String itemId, Object data)`
 
 - `String tableName` The table name.
-- `Number itemId` The item id.
+- `String itemId` The item id.
 
 #### `.then(function () {})`
 
