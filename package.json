@@ -1,6 +1,6 @@
 {
   "name": "prhone-mdb",
-  "version": "1.0.1",
+  "version": "2.0.0",
   "description": "Mini DataBase (DB)",
   "keywords": [
     "prhone",
@@ -26,11 +26,17 @@
     "url": "https://github.com/romelperez/prhone-mdb/issues"
   },
   "main": "lib/index.js",
+  "scripts": {
+    "test": "npm run test-setup && npm run test-run",
+    "test-setup": "sh test-setup.sh",
+    "test-run": "mocha './test/setup.js' './test/**/*.test.js'"
+  },
   "dependencies": {
-    "underscore": "^1.8.3"
+    "lodash": "^4.17.4",
+    "uuid": "^3.0.1"
   },
   "devDependencies": {
     "chai": "^3.5.0",
-    "require-dir": "^0.3.0"
+    "mocha": "^3.2.0"
   }
 }

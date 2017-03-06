@@ -1,3 +1,5 @@
+# gitignore
+
 node_modules
 jspm_packages
 bower_components
@@ -23,9 +25,14 @@ nbproject
 .npm
 .node_history
 .node_repl_history
+.vagrant
+.eslintcache
 
 Thumbs.db
-config/local.js
-tasks/local.js
 dump.rdb
 npm-debug.log
+
+## Project
+
+test/dbs/*
+!test/dbs/.gitkeep
