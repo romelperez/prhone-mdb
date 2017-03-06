@@ -1,5 +1,3 @@
-const chai = require('chai');
-const assert = chai.assert;
 const concurrent = require('../lib/concurrent');
 
 describe('concurrent tasks', function () {

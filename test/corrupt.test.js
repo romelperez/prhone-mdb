@@ -1,7 +1,5 @@
-const chai = require('chai');
 const MDB = require('../lib');
 
-const assert = chai.assert;
 const db = new MDB(`${__dirname}/dbs/db1.json`);
 
 describe('corrupt databases', function () {
@@ -23,7 +21,7 @@ describe('corrupt databases', function () {
   });
 
   it('getById should throw error', function () {
-    return db.getById('table1', 0).then(function () {
+    return db.getById('table1', '0').then(function () {
       assert.isOk(false);
     }, function (e) {
       assert.isOk(!!e);
@@ -31,7 +29,7 @@ describe('corrupt databases', function () {
   });
 
   it('updateById should throw error', function () {
-    return db.updateById('table1', 0, { field1: 'something' }).then(function () {
+    return db.updateById('table1', '0', { field1: 'something' }).then(function () {
       assert.isOk(false);
     }, function (e) {
       assert.isOk(!!e);
@@ -39,7 +37,7 @@ describe('corrupt databases', function () {
   });
 
   it('removeById should throw error', function () {
-    return db.removeById('table1', 0).then(function () {
+    return db.removeById('table1', '0').then(function () {
       assert.isOk(false);
     }, function (e) {
       assert.isOk(!!e);
