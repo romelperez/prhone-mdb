@@ -31,3 +31,9 @@ nbproject
 Thumbs.db
 dump.rdb
 npm-debug.log
+
+test
+test-setup.sh
+.travis.yml
+.eslintrc
+.editorconfig
